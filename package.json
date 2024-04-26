@@ -1,0 +1,44 @@
+{
+	"name": "login",
+	"description": "Please enter a description for your extension",
+	"icon": "extension",
+	"version": "1.0.0",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-extension-operation"
+	],
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"directus:extension": {
+		"type": "operation",
+		"path": {
+			"app": "dist/app.js",
+			"api": "dist/api.js"
+		},
+		"source": {
+			"app": "src/app.ts",
+			"api": "src/api.ts"
+		},
+		"host": "^10.10.0"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "11.0.3",
+		"@types/ms": "^0.7.34",
+		"@types/node": "^20.12.7",
+		"typescript": "^5.4.5",
+		"vue": "^3.4.25"
+	},
+	"dependencies": {
+		"@directus/errors": "^0.2.4",
+		"@types/jsonwebtoken": "^9.0.6",
+		"jsonwebtoken": "^9.0.2"
+	}
+}
